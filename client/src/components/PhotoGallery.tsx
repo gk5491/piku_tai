@@ -58,63 +58,64 @@ export function PhotoGallery() {
         <h2 className="text-5xl md:text-6xl font-display text-primary mb-4 drop-shadow-sm">Our Love Story</h2>
         <div className="h-1 w-32 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto rounded-full mb-12" />
         
-        <div className="relative flex justify-center items-center h-[500px] md:h-[600px]">
-          {/* Heart Frame Decoration */}
-          <motion.div
-            animate={{ 
-              scale: [1, 1.05, 1],
-              opacity: [0.2, 0.4, 0.2]
-            }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-            className="absolute z-0 text-primary/10"
-          >
-            <Heart size={600} fill="currentColor" className="hidden md:block" />
-            <Heart size={400} fill="currentColor" className="md:hidden" />
-          </motion.div>
+        <div className="relative flex flex-col justify-center items-center">
+          <div className="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px]">
+            {/* Heart Frame Decoration */}
+            <motion.div
+              animate={{ 
+                scale: [1, 1.05, 1],
+                opacity: [0.3, 0.5, 0.3]
+              }}
+              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+              className="absolute inset-0 z-0 text-primary/20 flex items-center justify-center"
+            >
+              <Heart size="100%" fill="currentColor" />
+            </motion.div>
 
-          {/* Masked Image Content */}
-          <div className="relative z-10 w-full max-w-[400px] md:max-w-[500px] aspect-square">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentIndex}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 1.1 }}
-                transition={{ duration: 1, ease: "easeInOut" }}
-                className="w-full h-full relative"
-                style={{
-                  clipPath: "path('M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z')",
-                  transform: "scale(20)" // Scale the path to fit the container
-                }}
-              >
-                {/* Fallback for Safari/browsers with issues with direct path scaling */}
-                <div 
-                  className="w-full h-full bg-cover bg-center rounded-3xl overflow-hidden shadow-2xl border-4 border-white"
-                  style={{ 
-                    clipPath: "url(#heart-clip)",
-                    backgroundImage: `url(${photos[currentIndex].url})`
-                  }}
-                />
-              </motion.div>
-            </AnimatePresence>
-            
-            {/* SVG Filter for clean heart clipping */}
-            <svg width="0" height="0" className="absolute">
+            {/* Masked Image Content */}
+            <div className="relative z-10 w-full h-full flex items-center justify-center">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentIndex}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 1.1 }}
+                  transition={{ duration: 1, ease: "easeInOut" }}
+                  className="w-[85%] h-[85%] relative flex items-center justify-center"
+                >
+                  <div 
+                    className="w-full h-full bg-cover bg-center shadow-2xl border-4 border-white"
+                    style={{ 
+                      clipPath: "path('M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z')",
+                      backgroundImage: `url(${photos[currentIndex].url})`,
+                      // The path is defined on a 24x24 grid, so we need to scale it to fit the 100% container
+                      // Instead of clip-path: path(), let's use a simpler SVG clipPath for better support and scaling
+                      clipPath: "url(#heart-clip-path)"
+                    }}
+                  />
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* SVG Clip Path Definition */}
+            <svg width="0" height="0" style={{ position: 'absolute' }}>
               <defs>
-                <clipPath id="heart-clip" clipPathUnits="objectBoundingBox">
-                  <path d="M0.5,0.925 L0.435,0.866 C0.203,0.655 0.05,0.519 0.05,0.354 C0.05,0.22 C0.155,0.115 0.29,0.115 0.36,0.171 C0.408,0.208 0.46,0.264 0.5,0.32 C0.54,0.264 0.592,0.208 0.64,0.171 C0.71,0.115 0.845,0.115 0.95,0.22 C0.95,0.354 0.797,0.655 0.565,0.866 L0.5,0.925 Z" />
+                <clipPath id="heart-clip-path" clipPathUnits="objectBoundingBox">
+                  <path d="M0.5,0.88 L0.441,0.826 C0.23,0.635 0.091,0.509 0.091,0.355 C0.091,0.231 0.187,0.135 0.311,0.135 C0.381,0.135 0.449,0.168 0.493,0.22 C0.537,0.168 0.605,0.135 0.675,0.135 C0.799,0.135 0.895,0.231 0.895,0.355 C0.895,0.509 0.756,0.635 0.545,0.826 L0.486,0.88 L0.5,0.88 Z" />
                 </clipPath>
               </defs>
             </svg>
+          </div>
 
-            {/* Caption Overlay */}
+          {/* Caption */}
+          <div className="h-20 mt-8">
             <AnimatePresence mode="wait">
               <motion.div
                 key={`caption-${currentIndex}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                className="absolute -bottom-16 left-0 right-0 text-center"
+                className="text-center"
               >
                 <p className="text-gray-800 font-handwriting text-3xl md:text-4xl drop-shadow-sm">
                   {photos[currentIndex].caption}
@@ -125,7 +126,7 @@ export function PhotoGallery() {
         </div>
 
         {/* Navigation Indicators */}
-        <div className="flex justify-center gap-2 mt-24">
+        <div className="flex justify-center gap-2 mt-8">
           {photos.map((_, idx) => (
             <button
               key={idx}
