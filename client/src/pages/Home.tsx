@@ -1,6 +1,7 @@
 import { HeroSection } from "@/components/HeroSection";
 import { PhotoGallery } from "@/components/PhotoGallery";
 import { LoveLetter } from "@/components/LoveLetter";
+import { VideoSection } from "@/components/VideoSection";
 import { WishesSection } from "@/components/WishesSection";
 import { FloatingHearts } from "@/components/FloatingHearts";
 import { Music } from "lucide-react";
@@ -60,6 +61,7 @@ export default function Home() {
         
         <div className="relative z-10 bg-background">
           <LoveLetter />
+          <VideoSection />
           <PhotoGallery />
           <WishesSection />
           
