@@ -13,7 +13,8 @@ export default function Home() {
 
   useEffect(() => {
     // Initialize audio only once
-    audioRef.current = new Audio("https://cdn.pixabay.com/audio/2022/02/10/audio_fc8c83e16b.mp3"); // Romantic piano royalty free
+    // A more modern romantic pop song (royalty free)
+    audioRef.current = new Audio("https://cdn.pixabay.com/audio/2022/05/27/audio_110e2008a0.mp3"); 
     audioRef.current.loop = true;
     audioRef.current.volume = 0.5;
 

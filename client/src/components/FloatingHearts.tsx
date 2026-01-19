@@ -13,15 +13,32 @@ export function FloatingHearts() {
   const [hearts, setHearts] = useState<Heart[]>([]);
 
   useEffect(() => {
-    // Initial batch
-    const initialHearts = Array.from({ length: 15 }, (_, i) => ({
+    // Initial large batch for more coverage
+    const initialHearts = Array.from({ length: 40 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
-      size: Math.random() * 20 + 10,
-      delay: Math.random() * 5,
-      duration: Math.random() * 10 + 10,
+      size: Math.random() * 25 + 15,
+      delay: Math.random() * 10,
+      duration: Math.random() * 15 + 10,
     }));
     setHearts(initialHearts);
+
+    // Keep adding hearts periodically to maintain density
+    const interval = setInterval(() => {
+      setHearts(current => {
+        const newHeart = {
+          id: Date.now(),
+          x: Math.random() * 100,
+          size: Math.random() * 25 + 15,
+          delay: 0,
+          duration: Math.random() * 15 + 10,
+        };
+        // Keep the heart count stable but dynamic
+        return [...current.slice(-59), newHeart];
+      });
+    }, 500);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
