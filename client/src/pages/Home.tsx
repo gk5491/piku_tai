@@ -12,11 +12,14 @@ export default function Home() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    // Initialize audio only once
-    // A more modern romantic pop song (royalty free)
-    audioRef.current = new Audio("https://cdn.pixabay.com/audio/2022/05/27/audio_110e2008a0.mp3"); 
+    // Initialize audio with a direct, stable URL
+    const songUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"; 
+    audioRef.current = new Audio(songUrl);
     audioRef.current.loop = true;
     audioRef.current.volume = 0.5;
+    
+    // Preload the audio
+    audioRef.current.load();
 
     return () => {
       audioRef.current?.pause();
