@@ -45,6 +45,8 @@ export function PhotoGallery() {
     return () => clearInterval(timer);
   }, []);
 
+  const blobPath = "M43.1,-68.5C56.2,-58.6,67.5,-47.3,72.3,-33.9C77.2,-20.5,75.5,-4.9,74.2,11.3C72.9,27.6,71.9,44.5,63.8,57.2C55.7,69.8,40.6,78.2,25.5,79.2C10.4,80.1,-4.7,73.6,-20.9,69.6C-37.1,65.5,-54.5,63.9,-66,54.8C-77.5,45.8,-83.2,29.3,-85.7,12.3C-88.3,-4.8,-87.7,-22.3,-79.6,-34.8C-71.5,-47.3,-55.8,-54.9,-41.3,-64.2C-26.7,-73.6,-13.4,-84.7,0.8,-86C15,-87.2,29.9,-78.5,43.1,-68.5Z";
+
   return (
     <section className="py-24 px-4 overflow-hidden relative bg-gradient-to-b from-white to-pink-50/50">
       <div className="max-w-7xl mx-auto text-center relative z-10">
@@ -59,55 +61,56 @@ export function PhotoGallery() {
         <div className="h-1 w-32 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto rounded-full mb-12" />
         
         <div className="relative flex flex-col justify-center items-center">
-          <div className="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px]">
-            {/* Heart Frame Decoration */}
-            <motion.div
-              animate={{ 
-                scale: [1, 1.05, 1],
-                opacity: [0.3, 0.5, 0.3]
-              }}
-              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-              className="absolute inset-0 z-0 text-primary/20 flex items-center justify-center"
+          <div className="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px] group">
+            {/* Animated SVG Blob Background */}
+            <svg 
+              viewBox="0 0 200 200" 
+              className="absolute inset-0 w-full h-full transition-transform duration-500 ease-out group-hover:scale-110"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <Heart size="100%" fill="currentColor" />
-            </motion.div>
+              <defs>
+                <clipPath id="blobClip">
+                  <path d={blobPath} transform="translate(100 100)" />
+                </clipPath>
+              </defs>
 
-            {/* Masked Image Content */}
-            <div className="relative z-10 w-full h-full flex items-center justify-center">
               <AnimatePresence mode="wait">
-                <motion.div
+                <motion.image
                   key={currentIndex}
+                  href={photos[currentIndex].url}
+                  width="200"
+                  height="200"
+                  preserveAspectRatio="xMidYMid slice"
+                  clipPath="url(#blobClip)"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 1.1 }}
                   transition={{ duration: 1, ease: "easeInOut" }}
-                  className="w-[85%] h-[85%] relative flex items-center justify-center"
-                >
-                  <div 
-                    className="w-full h-full bg-cover bg-center shadow-2xl border-4 border-white"
-                    style={{ 
-                      backgroundImage: `url(${photos[currentIndex].url})`,
-                      // The path is defined on a 24x24 grid, so we need to scale it to fit the 100% container
-                      // Instead of clip-path: path(), let's use a simpler SVG clipPath for better support and scaling
-                      clipPath: "url(#heart-clip-path)"
-                    }}
-                  />
-                </motion.div>
+                />
               </AnimatePresence>
-            </div>
 
-            {/* SVG Clip Path Definition */}
-            <svg width="0" height="0" style={{ position: 'absolute' }}>
-              <defs>
-                <clipPath id="heart-clip-path" clipPathUnits="objectBoundingBox">
-                  <path d="M0.5,0.88 L0.441,0.826 C0.23,0.635 0.091,0.509 0.091,0.355 C0.091,0.231 0.187,0.135 0.311,0.135 C0.381,0.135 0.449,0.168 0.493,0.22 C0.537,0.168 0.605,0.135 0.675,0.135 C0.799,0.135 0.895,0.231 0.895,0.355 C0.895,0.509 0.756,0.635 0.545,0.826 L0.486,0.88 L0.5,0.88 Z" />
-                </clipPath>
-              </defs>
+              <path
+                id="textPathCurve"
+                d={blobPath}
+                transform="translate(100 100)"
+                fill="none"
+              />
+
+              <text className="text-[6px] font-bold tracking-widest uppercase fill-primary/40 group-hover:fill-primary transition-colors duration-500">
+                <textPath href="#textPathCurve" startOffset="0%">
+                  ❤ MADE WITH LOVE ❤ MADE WITH LOVE ❤ MADE WITH LOVE ❤ MADE WITH LOVE
+                  <animate attributeName="startOffset" from="0%" to="100%" dur="15s" repeatCount="indefinite" />
+                </textPath>
+                <textPath href="#textPathCurve" startOffset="100%">
+                  ❤ MADE WITH LOVE ❤ MADE WITH LOVE ❤ MADE WITH LOVE ❤ MADE WITH LOVE
+                  <animate attributeName="startOffset" from="-100%" to="0%" dur="15s" repeatCount="indefinite" />
+                </textPath>
+              </text>
             </svg>
           </div>
 
           {/* Caption */}
-          <div className="h-20 mt-8">
+          <div className="h-20 mt-12">
             <AnimatePresence mode="wait">
               <motion.div
                 key={`caption-${currentIndex}`}
