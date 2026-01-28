@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/HeroSection";
 import { PhotoGallery } from "@/components/PhotoGallery";
+import { Carousel3D } from "@/components/Carousel3D";
 import { LoveLetter } from "@/components/LoveLetter";
 import { VideoSection } from "@/components/VideoSection";
 import { WishesSection } from "@/components/WishesSection";
@@ -61,6 +62,7 @@ export default function Home() {
         
         <div className="relative z-10 bg-background">
           <LoveLetter />
+          <Carousel3D />
           <VideoSection />
           <PhotoGallery />
           <WishesSection />
