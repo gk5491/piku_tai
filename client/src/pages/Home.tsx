@@ -5,6 +5,7 @@ import { LoveLetter } from "@/components/LoveLetter";
 import { VideoSection } from "@/components/VideoSection";
 import { WishesSection } from "@/components/WishesSection";
 import { FloatingHearts } from "@/components/FloatingHearts";
+import { ValentineModal } from "@/components/ValentineModal";
 import { Music } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 
@@ -43,6 +44,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-pink-200">
       <FloatingHearts />
+      <ValentineModal />
       
       {/* Music Toggle - Fixed Bottom Right */}
       <button
