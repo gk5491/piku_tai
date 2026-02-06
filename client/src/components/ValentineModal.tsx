@@ -43,7 +43,7 @@ export function ValentineModal() {
               </motion.div>
               
               <h2 className="text-4xl md:text-5xl font-display text-primary mb-6">
-                Will you be my Valentine?
+                Do you love me?
               </h2>
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
@@ -57,12 +57,13 @@ export function ValentineModal() {
                 
                 <motion.div
                   animate={{ x: noButtonPos.x, y: noButtonPos.y }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                  className="z-50"
                 >
                   <Button
                     variant="outline"
                     size="lg"
-                    className="px-10 py-6 text-xl rounded-full border-2 hover:bg-transparent"
+                    className="px-10 py-6 text-xl rounded-full border-2 hover:bg-white bg-white pointer-events-auto"
                     onMouseEnter={moveNoButton}
                   >
                     No
