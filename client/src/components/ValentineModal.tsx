@@ -9,8 +9,10 @@ export function ValentineModal() {
   const [isAccepted, setIsAccepted] = useState(false);
 
   const moveNoButton = () => {
-    const x = Math.random() * (window.innerWidth - 100) - window.innerWidth / 2;
-    const y = Math.random() * (window.innerHeight - 100) - window.innerHeight / 2;
+    // Keep it within the modal's general area or slightly outside but visible
+    const range = 250;
+    const x = Math.random() * (range * 2) - range;
+    const y = Math.random() * (range * 2) - range;
     setNoButtonPos({ x, y });
   };
 
