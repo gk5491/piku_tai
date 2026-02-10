@@ -16,10 +16,10 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "Development Server"
+args = "dev-server"
 
 [[workflows.workflow]]
-name = "Development Server"
+name = "dev-server"
 author = "agent"
 
 [[workflows.workflow.tasks]]
