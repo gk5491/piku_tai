@@ -35,10 +35,10 @@ export function HeroSection() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
-          className="text-6xl md:text-8xl lg:text-9xl font-display text-white mb-6 drop-shadow-lg"
+          className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-display text-white mb-6 drop-shadow-lg leading-tight"
         >
           Happy
-          <span className="block text-pink-200 font-handwriting mt-4 md:mt-8 text-7xl md:text-9xl">
+          <span className="block text-pink-200 font-handwriting mt-2 md:mt-8 text-5xl sm:text-7xl md:text-9xl">
             Valentine's Day
           </span>
         </motion.h1>
@@ -47,7 +47,7 @@ export function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
-          className="text-white/80 text-lg md:text-xl font-light max-w-2xl mx-auto italic"
+          className="text-white/80 text-base sm:text-lg md:text-xl font-light max-w-2xl mx-auto italic px-4"
         >
           "You are my today and all of my tomorrows."
         </motion.p>
