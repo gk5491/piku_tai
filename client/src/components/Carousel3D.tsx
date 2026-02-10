@@ -2,18 +2,18 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const carouselPhotos = [
-  "/assets/carousel/photo1.jpg",
-  "/assets/carousel/photo2.jpg",
-  "/assets/carousel/photo3.jpg",
-  "/assets/carousel/photo4.jpg",
-  "/assets/carousel/photo5.jpg",
-  "/assets/carousel/photo6.jpg",
-  "/assets/carousel/photo7.jpg",
-  "/assets/carousel/photo8.jpg",
-  "/assets/carousel/photo9.jpg",
-  "/assets/carousel/photo10.jpg",
-  "/assets/carousel/photo11.jpg",
-  "/assets/carousel/photo12.jpg",
+  "/assets/carousel/IMG_20260210_085953_1770703536035.jpg",
+  "/assets/carousel/IMG_20260210_090022_1770703536036.jpg",
+  "/assets/carousel/IMG_20260210_090147_1770703536039.jpg",
+  "/assets/carousel/IMG_20260210_090404_1770703536042.jpg",
+  "/assets/carousel/IMG_20260210_095926_1770703536043.jpg",
+  "/assets/carousel/IMG_20260210_100013_1770703536044.jpg",
+  "/assets/carousel/IMG_20260210_104706_1770703536045.jpg",
+  "/assets/carousel/IMG_20260210_104747_1770703536046.jpg",
+  "/assets/carousel/IMG_20260210_104819_1770703536050.jpg",
+  "/assets/carousel/IMG_20260210_104859_1770703536051.jpg",
+  "/assets/carousel/IMG_20260210_104951_1770703536052.jpg",
+  "/assets/carousel/IMG_20260210_105204_1770703536054.jpg",
 ];
 
 export function Carousel3D() {
