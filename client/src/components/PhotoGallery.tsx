@@ -5,33 +5,63 @@ import { Heart } from "lucide-react";
 const photos = [
   {
     id: 1,
-    url: "https://images.unsplash.com/photo-1516585427167-9f4af9627e6c?auto=format&fit=crop&q=80&w=800",
+    url: "/assets/carousel/IMG_20260210_085953_1770703536035.jpg",
     caption: "Every touch is magic",
   },
   {
     id: 2,
-    url: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&q=80&w=800",
+    url: "/assets/carousel/IMG_20260210_090022_1770703536036.jpg",
     caption: "Moments just for us",
   },
   {
     id: 3,
-    url: "https://images.unsplash.com/photo-1511285560982-1351cdeb9821?auto=format&fit=crop&q=80&w=800",
+    url: "/assets/carousel/IMG_20260210_090147_1770703536039.jpg",
     caption: "Walking through life with you",
   },
   {
     id: 4,
-    url: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&q=80&w=800",
+    url: "/assets/carousel/IMG_20260210_090404_1770703536042.jpg",
     caption: "My forever date",
   },
   {
     id: 5,
-    url: "https://images.unsplash.com/photo-1621621667797-e06afc217fb0?auto=format&fit=crop&q=80&w=800",
+    url: "/assets/carousel/IMG_20260210_095926_1770703536043.jpg",
     caption: "Your smile lights up my world",
   },
   {
     id: 6,
-    url: "https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?auto=format&fit=crop&q=80&w=800",
+    url: "/assets/carousel/IMG_20260210_100013_1770703536044.jpg",
     caption: "Forever in love",
+  },
+  {
+    id: 7,
+    url: "/assets/carousel/IMG_20260210_104706_1770703536045.jpg",
+    caption: "Pure happiness with you",
+  },
+  {
+    id: 8,
+    url: "/assets/carousel/IMG_20260210_104747_1770703536046.jpg",
+    caption: "Our beautiful journey",
+  },
+  {
+    id: 9,
+    url: "/assets/carousel/IMG_20260210_104819_1770703536050.jpg",
+    caption: "Treasured memories",
+  },
+  {
+    id: 10,
+    url: "/assets/carousel/IMG_20260210_104859_1770703536051.jpg",
+    caption: "Love in every frame",
+  },
+  {
+    id: 11,
+    url: "/assets/carousel/IMG_20260210_104951_1770703536052.jpg",
+    caption: "Soulmates forever",
+  },
+  {
+    id: 12,
+    url: "/assets/carousel/IMG_20260210_105204_1770703536054.jpg",
+    caption: "Always and forever",
   },
 ];
 
