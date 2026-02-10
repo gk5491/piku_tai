@@ -15,19 +15,20 @@ export function HeroSection() {
   return (
     <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video */}
-      <div className="absolute inset-0 w-full h-full bg-black/40 z-10" />
+      <div className="absolute inset-0 w-full h-full z-10" />
       <video
         autoPlay
         loop
-        muted
         playsInline
-        className="absolute inset-0 w-full h-full object-contain z-0"
+        className="absolute inset-0 w-full h-full object-contain z-0 transform -rotate-90 scale-150"
       >
         <source
           src="/assets/carousel/VID_20251203_000515_156_1770707269178.mp4"
           type="video/mp4"
         />
       </video>
+
+
 
       {/* Content */}
       <AnimatePresence>
