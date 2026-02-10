@@ -21,7 +21,7 @@ export function HeroSection() {
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        className="absolute inset-0 w-full h-full object-contain z-0"
       >
         <source
           src="/assets/carousel/VID_20251203_000515_156_1770707269178.mp4"
