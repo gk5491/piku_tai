@@ -108,8 +108,8 @@ export function PhotoGallery() {
                 <motion.image
                   key={currentIndex}
                   href={photos[currentIndex].url}
-                  width="200"
-                  height="200"
+                  width="100%"
+                  height="100%"
                   preserveAspectRatio="xMidYMid slice"
                   clipPath="url(#blobClip)"
                   initial={{ opacity: 0, scale: 0.8 }}
