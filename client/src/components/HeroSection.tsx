@@ -15,7 +15,7 @@ export function HeroSection() {
   return (
     <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video */}
-      <div className="absolute inset-0 w-full h-full z-10" />
+      <div className="absolute inset-0 w-full h-full z-10 bg-black/60" />
       <video
         autoPlay
         loop
