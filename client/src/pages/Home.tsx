@@ -65,7 +65,7 @@ export default function Home() {
         <div className="relative z-10 bg-background">
           <LoveLetter />
           <Carousel3D />
-          <VideoSection />
+          {/* <VideoSection /> */}
           <PhotoGallery />
           <WishesSection />
           

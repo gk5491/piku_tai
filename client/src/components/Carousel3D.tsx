@@ -2,17 +2,17 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const carouselPhotos = [
-  "/assets/carousel/IMG_20260210_085953_1770703536035.jpg",
   "/assets/carousel/IMG_20260210_090022_1770703536036.jpg",
   "/assets/carousel/IMG_20260210_090147_1770703536039.jpg",
   "/assets/carousel/IMG_20260210_090404_1770703536042.jpg",
   "/assets/carousel/IMG_20260210_095926_1770703536043.jpg",
   "/assets/carousel/IMG_20260210_100013_1770703536044.jpg",
+  "/assets/carousel/IMG_20260210_085953_1770703536035.jpg",
   "/assets/carousel/IMG_20260210_104706_1770703536045.jpg",
-  "/assets/carousel/IMG_20260210_104747_1770703536046.jpg",
-  "/assets/carousel/IMG_20260210_104819_1770703536050.jpg",
-  "/assets/carousel/IMG_20260210_104859_1770703536051.jpg",
-  "/assets/carousel/IMG_20260210_104951_1770703536052.jpg",
+  // "/assets/carousel/IMG_20260210_104747_1770703536046.jpg",
+  // "/assets/carousel/IMG_20260210_104819_1770703536050.jpg",
+  // "/assets/carousel/IMG_20260210_104859_1770703536051.jpg",
+  // "/assets/carousel/IMG_20260210_104951_1770703536052.jpg",
   "/assets/carousel/IMG_20260210_105204_1770703536054.jpg",
 ];
 
@@ -47,7 +47,7 @@ export function Carousel3D() {
       <style dangerouslySetInnerHTML={{ __html: `
         .scene {
           overflow: hidden;
-          perspective: 60em;
+          perspective: 70em;
           mask: linear-gradient(90deg, #0000, red 20% 80%, #0000);
           -webkit-mask: linear-gradient(90deg, #0000, red 20% 80%, #0000);
         }
@@ -71,7 +71,7 @@ export function Carousel3D() {
           --ba: calc(1turn / var(--n));
           grid-area: 1/1;
           width: var(--w);
-          aspect-ratio: 7/10;
+          aspect-ratio: 9/16;
           object-fit: cover;
           border-radius: 1.5em;
           backface-visibility: hidden;
@@ -85,7 +85,7 @@ export function Carousel3D() {
 
         .card.highlighted {
           filter: sepia(0) contrast(1.2) brightness(1.1);
-          border-color: #ff4d6d;
+          border-color: #f4d6d;
           transform: 
             rotateY(calc(var(--i) * var(--ba))) 
             translateZ(calc(-1 * (0.5 * var(--w) + 1.5em) / 0.267))

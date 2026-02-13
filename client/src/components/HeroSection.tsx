@@ -13,14 +13,16 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative w-[100%] md:w-full h-screen flex items-center justify-center overflow-hidden mx-auto">
       {/* Background Video */}
       <div className="absolute inset-0 w-full h-full z-10 bg-black/100" />
       <video
         autoPlay
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-contain z-10 transform -rotate-90 scale-150"
+        preload="auto"
+        poster="/assets/carousel/photo33.jpg"
+        className="absolute inset-0 w-[60%] md:w-full h-full object-contain z-10 transform -rotate-90 scale-150 mx-auto"
       >
         <source
           src="/assets/carousel/VID_20251203_000515_156_1770707269178.mp4"
